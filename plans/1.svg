@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="0 0 841.9 595.3" id="mainmap">
+    <g id="Map1" font-family="Open Sans" transform="scale(1 1)">
+        <g id="Scene" transform="translate(0 0)">
+            <g id="Buildings">
+                <path id="room_5_2_" fill="#FFFFFF" stroke="#010202" stroke-width="2" stroke-miterlimit="10" d='M743,432.4 743,477.6
+	559.8,477.6 559.8,317.4 743,317.4 z'/>
+                <path fill="#FFFFFF" stroke="#010202" stroke-width="2" stroke-miterlimit="10" d='M743,248.6 z'/>
+                <path id="room_K_2_" fill="#FFFFFF" stroke="#010202" stroke-width="2" stroke-miterlimit="10" d='M743,317.4 743,246
+	614,246 614,232.7 537.7,232.7 537.7,317.4 z'/>
+                <path fill="#FFFFFF" stroke="#010202" stroke-width="2" stroke-miterlimit="10" d='M537.7,317.4 500.5,317.4 500.5,477.6
+	559.8,477.6 559.8,317.4z'/>
+                <path id="room_3_2_" fill="#FFFFFF" stroke="#010202" stroke-width="2" stroke-miterlimit="10" d='M458.5,477.6 292,477.6
+	292,426 262,426 262,328.7 458.5,328.7z'/>
+                <path id="room_4_2_" fill="#FFFFFF" stroke="#010202" stroke-width="2" stroke-miterlimit="10" d='M292,477.6 292,426
+	262,426 262,312.7 137.3,312.7 137.3,477.6 z'/>
+                <path id="room_2_2_" fill="#FFFFFF" stroke="#010202" stroke-width="2" stroke-miterlimit="10" d='M416.7,328.7 416.7,278.5
+	372.7,278.5 372.7,193.4 262,193.4 262,328.7 z'/>
+                <path fill="#060507" stroke="#010202" stroke-width="0.2" stroke-miterlimit="10" d='M447.4,235.4 450.7,235.4 447.4,233.7
+	z'/>
+                <path fill="#040405" stroke="#010202" stroke-width="0.2" stroke-miterlimit="10" d='M447.4,235.5 450.7,235.5 447.4,237.2
+	z'/>
+
+
+                <path fill="#FFFFFF" fill-opacity="0.36" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d='M176,79.5
+	347.7,79.5 347.7,147.9 362,160.2 372.7,160.2 372.7,136 525,136 537.7,145.7 537.7,317.4 500.5,317.4 500.5,366.2 458.5,366.2
+	458.5,328.7 416.7,328.7 416.7,278.5 500.5,278.5 500.5,193.4 262,193.4 262,140.7 176,140.7 z'/>
+
+
+                <rect x="137.3" y="100.7" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="5.7"
+                      height="21.5"/>
+                <rect x="176" y="100.7" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="5.7"
+                      height="21.5"/>
+                <rect x="262" y="162.5" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="5.7"
+                      height="21.5"/>
+                <rect x="342" y="84.8" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="5.7"
+                      height="21.5"/>
+                <rect x="295.9" y="79.5" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="21.5"
+                      height="5.7"/>
+                <rect x="498.3" y="136" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="21.5"
+                      height="5.7"/>
+                <rect x="532" y="165.5" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="5.7"
+                      height="21.5"/>
+                <rect x="372.7" y="248" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10"
+                      width="127.8" height="30.5"/>
+                <rect x="416.7" y="289" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="5.7"
+                      height="21.5"/>
+                <rect x="532" y="286.6" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="5.7"
+                      height="21.5"/>
+
+                <rect x="466.5" y="360.5" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="21.5"
+                      height="5.7"/>
+                <rect x="494.8" y="326.5" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="5.7"
+                      height="21.5"/>
+                <rect x="427.3" y="323" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="21.5"
+                      height="5.7"/>
+                <rect x="421.4" y="278.5" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="21.5"
+                      height="5.7"/>
+                <rect x="470.9" y="193.4" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="21.5"
+                      height="5.7"/>
+                <rect x="292" y="441.1" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="5.7"
+                      height="21.5"/>
+                <rect x="458.5" y="366.2" fill="#FFFFFF" stroke="#010202" stroke-width="2" stroke-miterlimit="10"
+                      width="42" height="111.4"/>
+                <rect id="office_2_" x="137.3" y="140.7" fill="#FFFFFF" stroke="#010202" stroke-width="2"
+                      stroke-miterlimit="10" width="124.7" height="172"/>
+                <rect x="394.8" y="212.5" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="76.1" height="15.5"/>
+                <rect x="397.6" y="214.6" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="70.5" height="11"/>
+                <rect x="372.7" y="193.4" fill="#FFFFFF" stroke="#010202" stroke-width="2" stroke-miterlimit="10"
+                      width="127.8" height="85.1"/>
+                <rect x="108" y="79.5" fill="#FFFFFF" stroke="#010202" stroke-width="2" stroke-miterlimit="10"
+                      width="29.3" height="61.2"/>
+                <rect x="137.3" y="79.5" fill="#FFFFFF" stroke="#010202" stroke-width="2" stroke-miterlimit="10"
+                      width="38.7" height="60.7"/>
+                <rect x="442.3" y="228" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="10.2" height="14.7"/>
+                <rect x="432.2" y="228" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="10.2" height="14.7"/>
+                <rect x="422" y="228" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="10.2" height="14.7"/>
+                <rect x="411.6" y="228" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="10.2" height="14.7"/>
+                <rect x="401.4" y="228" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="10.2" height="14.7"/>
+                <rect x="452.5" y="197.9" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="10.2" height="14.7"/>
+                <rect x="442.3" y="197.9" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="10.2" height="14.7"/>
+                <rect x="432.2" y="197.9" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="10.2" height="14.7"/>
+                <rect x="422" y="197.9" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="10.2" height="14.7"/>
+                <rect x="411.6" y="197.9" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="10.2" height="14.7"/>
+                <rect x="389.6" y="204.3" fill="#040405" stroke="#010202" stroke-width="0.2" stroke-miterlimit="10"
+                      width="71.5" height="0.9"/>
+                <rect x="390.5" y="234.9" fill="#040405" stroke="#010202" stroke-width="0.2" stroke-miterlimit="10"
+                      width="56.9" height="0.9"/>
+                <rect x="389.6" y="204.3" fill="#040405" stroke="#010202" stroke-width="0.2" stroke-miterlimit="10"
+                      width="0.9" height="31.4"/>
+                <rect x="371.8" y="463.8" fill="#040405" stroke="#010202" stroke-width="0.2" stroke-miterlimit="10"
+                      width="86.8" height="1.4"/>
+                <rect x="371.8" y="449.4" fill="#040405" stroke="#010202" stroke-width="0.2" stroke-miterlimit="10"
+                      width="1.4" height="28.3"/>
+                <rect x="137.3" y="100.7" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="5.7"
+                      height="21.5"/>
+                <rect x="470.9" y="193.4" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="21.5"
+                      height="5.7"/>
+                <rect x="394.8" y="212.5" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="76.1" height="15.5"/>
+                <rect x="397.6" y="214.6" fill="#FFFFFF" stroke="#010202" stroke-width="0.5" stroke-miterlimit="10"
+                      width="70.5" height="11"/>
+            </g>
+            <path fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d='M537.7,232.7 614,232.7 614,246 743,246
+	743,157.9 537.7,157.9 z'/>
+            <path fill="#FFFFFF" fill-opacity="0.42" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d='M743,157.9
+	743,79.5 347.7,79.5 347.7,147.9 362,160.2 372.7,160.2 372.7,136 525,136 537.7,145.7 537.7,157.9 z'/>
+
+            <g id="Text" font-family="Open Sans" stroke-linejoin="round" stroke-linecap="round" stroke="none"
+               stroke-width="0.375" fill="#ffffff" stroke-miterlimit="79.8403193612775">
+                <text transform="matrix(1 0 0 1 471.8753 208.525)" fill="#010202" font-family="'Calibri'"
+                      font-size="10">Вниз
+                </text>
+                <text transform="matrix(1 0 0 1 176 237.1994)" fill="#010202" font-family="'Calibri'" font-size="18">
+                    Офис
+                </text>
+                <text transform="matrix(1 0 0 1 281.3333 303.0665)" fill="#010202" font-family="'Calibri'"
+                      font-size="18">2-ая серверная
+                </text>
+                <text transform="matrix(1 0 0 1 304.2498 403.1501)" fill="#010202" font-family="'Calibri'"
+                      font-size="18">3-ая серверная
+                </text>
+                <text transform="matrix(1 0 0 1 603.5831 413.4835)" fill="#010202" font-family="'Calibri'"
+                      font-size="18">5-ая серверная
+                </text>
+                <text transform="matrix(1 0 0 1 152.9165 446.8168)" fill="#010202" font-family="'Calibri'"
+                      font-size="18">4-ая серверная
+                </text>
+                <text transform="matrix(1 0 0 1 572 285.6498)" fill="#010202" font-family="'Calibri'" font-size="18">
+                    Комерческий отдел
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
