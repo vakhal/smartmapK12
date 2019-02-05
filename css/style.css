@@ -359,9 +359,8 @@ button:focus {
 /* Current level */
 
 .level.level--current {
-	-webkit-transform: translateZ(15vmin) rotate3d(0,0,1,20deg);
-	/* go to center */
-	transform: translateZ(15vmin) rotate3d(0,0,1,20deg);
+	/*-webkit-transform: translateZ(15vmin) rotate3d(0,0,1,20deg);
+	transform: translateZ(15vmin) rotate3d(0,0,1,20deg);*/
 }
 
 /* Navigation classes */
@@ -383,13 +382,13 @@ button:focus {
 }
 
 .levels--open .level.level--moveOutUp {
-	-webkit-transform: translateZ(90vmin);
-	transform: translateZ(90vmin);
+	/*-webkit-transform: translateZ(90vmin);
+	transform: translateZ(90vmin);*/
 }
 
 .levels--open .level.level--moveOutDown {
-	-webkit-transform: translateZ(-60vmin);
-	transform: translateZ(-60vmin);
+/*-webkit-transform: translateZ(-60vmin);
+transform: translateZ(-60vmin);*/
 }
 
 
@@ -956,4 +955,9 @@ button:focus {
 		padding-right: 4em;
 		text-align: left;
 	}
+}
+
+.no-transform{
+	transform: none!important;
+	-webkit-transform: none!important;
 }

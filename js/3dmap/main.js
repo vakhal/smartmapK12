@@ -65,8 +65,6 @@
 		// levels navigation up/down ctrls
 		levelUpCtrl = mallNav.querySelector('.mallnav__button--up'),
 		levelDownCtrl = mallNav.querySelector('.mallnav__button--down'),
-		// pins
-		pins = [].slice.call(mallLevelsEl.querySelectorAll('.pin')),
 		// content element
 		contentEl = document.querySelector('.content'),
 		// content close ctrl
@@ -111,6 +109,7 @@
 		mallLevels.forEach(function(level, pos) {
 			level.addEventListener('click', function() {
 				// shows this level
+				$('.levels').addClass('no-transform');
 				showLevel(pos+1);
 			});
 		});
@@ -119,6 +118,7 @@
 		allLevelsCtrl.addEventListener('click', function() {
 			// shows all levels
 			showAllLevels();
+			$('.levels').removeClass('no-transform');
 		});
 
 		// navigating through the levels
@@ -137,28 +137,6 @@
 			}
 		});
 
-		// hovering a pin / clicking a pin
-		pins.forEach(function(pin) {
-			var contentItem = contentEl.querySelector('.content__item[data-space="' + pin.getAttribute('data-space') + '"]');
-
-			pin.addEventListener('mouseenter', function() {
-				if( !isOpenContentArea ) {
-					classie.add(contentItem, 'content__item--hover');
-				}
-			});
-			pin.addEventListener('mouseleave', function() {
-				if( !isOpenContentArea ) {
-					classie.remove(contentItem, 'content__item--hover');
-				}
-			});
-			pin.addEventListener('click', function(ev) {
-				ev.preventDefault();
-				// open content for this pin
-				openContent(pin.getAttribute('data-space'));
-				// remove hover class (showing the title)
-				classie.remove(contentItem, 'content__item--hover');
-			});
-		});
 
 		// closing the content area
 		contentCloseCtrl.addEventListener('click', function() {
@@ -216,8 +194,6 @@
 		onEndTransition(levelEl, function() {
 			classie.add(mallLevelsEl, 'levels--open');
 
-			// show level pins
-			showPins();
 
 			isExpanded = true;
 		}, 'transform');
@@ -245,9 +221,6 @@
 		classie.remove(mallLevelsEl, 'levels--selected-' + selectedLevel);
 		classie.remove(mallLevelsEl, 'levels--open');
 
-		// hide level pins
-		removePins();
-
 		// shows surrounding element
 		showSurroundings();
 		
@@ -272,21 +245,7 @@
 		});
 	}
 
-	/**
-	 * Shows the level´s pins
-	 */
-	function showPins(levelEl) {
-		var levelEl = levelEl || mallLevels[selectedLevel - 1];
-		classie.add(levelEl.querySelector('.level__pins'), 'level__pins--active');
-	}
 
-	/**
-	 * Removes the level´s pins
-	 */
-	function removePins(levelEl) {
-		var levelEl = levelEl || mallLevels[selectedLevel - 1];
-		classie.remove(levelEl.querySelector('.level__pins'), 'level__pins--active');
-	}
 
 	/**
 	 * Show the navigation ctrls
@@ -363,8 +322,6 @@
 			classie.remove(mallLevelsEl, 'levels--selected-' + prevSelectedLevel);
 			classie.add(mallLevelsEl, 'levels--selected-' + selectedLevel);
 
-			// show the current level´s pins
-			showPins();
 
 			isNavigating = false;
 		});
@@ -372,8 +329,6 @@
 		// filter the spaces for this level
 		showLevelSpaces();
 
-		// hide the previous level´s pins
-		removePins(currentLevel);
 	}
 
 	/**
