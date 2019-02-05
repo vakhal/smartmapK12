@@ -263,19 +263,19 @@ button:focus {
 }
 
 .level--1::after {
-	content: 'L1';
+	content: '';
 }
 
 .level--2::after {
-	content: 'L2';
+	content: '';
 }
 
 .level--3::after {
-	content: 'L3';
+	content: '';
 }
 
 .level--4::after {
-	content: 'L4';
+	content: '';
 }
 
 .level:not(:first-child) {
@@ -728,7 +728,7 @@ transform: translateZ(-60vmin);*/
 }
 
 .list__item::after {
-	content: 'L' attr(data-level) ' / ' attr(data-space);
+	/*content: 'L' attr(data-level) ' / ' attr(data-space);*/
 	font-size: 0.65em;
 	line-height: 3;
 	position: absolute;

@@ -20,7 +20,7 @@
                     <?=file_get_contents(__DIR__ . '/plans/1.svg')?>
                 </div>
                 <div class="level level--2" aria-label="Level 2">
-                    <?=file_get_contents(__DIR__ . '/plans/2.svg')?>
+                   <?=file_get_contents(__DIR__ . '/plans/2.svg')?>
                 </div>
 
                 <<!--div class="level level--3" aria-label="Level 3">
