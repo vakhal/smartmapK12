@@ -1,0 +1,45 @@
+svg {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+#Buildings path {
+    transition: fill 0.8s;
+    cursor: pointer;
+}
+
+#Buildings path.active {
+    fill: #67000a;
+
+}
+
+#Text text {
+    fill: #fff;
+    user-select: none;
+    pointer-events: none;
+}
+
+#control_buttons {
+    position: absolute;
+    top: 100px !important;
+    right: 30px;
+    width: 50px !important;
+    height: 150px;
+    display: block;
+    z-index: 8;
+
+}
+
+#control_buttons img {
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
