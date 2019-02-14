@@ -38,6 +38,8 @@
 					this.removeEventListener( transEndEventName, onEndCallbackFn );
 				}
 				if( callback && typeof callback === 'function' ) { callback.call(this); }
+				window.initPan(ev.currentTarget);
+
 			};
 			if( support.transitions ) {
 				el.addEventListener( transEndEventName, onEndCallbackFn );
@@ -117,6 +119,7 @@
 		// click on the show mall´s levels ctrl
 		allLevelsCtrl.addEventListener('click', function() {
 			// shows all levels
+			window.disablePan();
 			showAllLevels();
 			$('.levels').removeClass('no-transform');
 		});
@@ -283,6 +286,7 @@
 	 * Navigate through the mall´s levels
 	 */
 	function navigate(direction) {
+		window.disablePan();
 		if( isNavigating || !isExpanded || isOpenContentArea ) {
 			return false;
 		}

@@ -1,10 +1,4 @@
-$('#Buildings ' + window.location.hash).addClass('active');
-console.log('#Buildings ' + window.location.hash);
-$('#Buildings path').click(function () {
-    $('#Buildings path').removeClass('active');
-    $(this).addClass('active');
-    window.location.hash = $(this).attr('id');
-});
+
 
 var eventsHandler;
 eventsHandler = {
@@ -56,28 +50,42 @@ eventsHandler = {
     }
 }
 
-buildingPan = svgPanZoom('#mainmap', {
+window.levelPan;
+svgPanZoom('.level > svg', {
     zoomEnabled: true
     , controlIconsEnabled: false
     , fit: true
     , minZoom: 0.8
     , maxZoom: 5
     , center: true
+    , panEnabled: false
     , zoom: 0.9
     , dblClickZoomEnabled: false
     , customEventsHandler: eventsHandler
 });
-
+window.initPan = function(target) {
+    var level = $(target);
+    var classL = level.attr('class').split(' ').join('.');
+    var selector = '.' + classL + ' > svg';
+    //console.log(level);return;
+    console.log($(selector));
+    window.levelPan = $(selector).getPan();
+    console.log(window.levelPan);
+    $('#control_buttons').hide();
+}
+window.disablePan = function(){
+    window.levelPan.destroy();
+}
 document.getElementById('zoom-in').addEventListener('click', function (ev) {
     ev.preventDefault()
-    buildingPan.zoomIn();
+    window.levelPan.zoomIn();
 });
 document.getElementById('zoom-out').addEventListener('click', function (ev) {
     ev.preventDefault()
-    buildingPan.zoomOut();
+    window.levelPan.zoomOut();
 });
 document.getElementById('reset').addEventListener('click', function (ev) {
     ev.preventDefault()
-    buildingPan.resetZoom();
-    buildingPan.resetPan();
+    window.levelPan.resetZoom();
+    window.levelPan.resetPan();
 });

@@ -12,7 +12,11 @@
 
 <div class="container">
     <div class="main">
-
+        <div id="control_buttons">
+            <img src="images/zoom-return.svg" id="reset">
+            <img src="images/zoom-plus.svg" id="zoom-in">
+            <img src="images/zoom-minus.svg" id="zoom-out">
+        </div>
         <div class="mall">
 
             <div class="levels">
@@ -399,7 +403,11 @@
 <!-- /container -->
 <script src="/js/3dmap/classie.js"></script>
 <script src="/js/3dmap/list.min.js"></script>
+<script src="/js/svg-pan-zoom.min.js"></script>
+<script src="/js/hammer.min.js"></script>
+<script src="/js/panzoom.js"></script>
 <script src="/js/3dmap/main.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
 
