@@ -51,30 +51,31 @@ eventsHandler = {
 }
 
 window.levelPan;
-svgPanZoom('.level > svg', {
-    zoomEnabled: true
-    , controlIconsEnabled: false
-    , fit: true
-    , minZoom: 0.8
-    , maxZoom: 5
-    , center: true
-    , panEnabled: false
-    , zoom: 0.9
-    , dblClickZoomEnabled: false
-    , customEventsHandler: eventsHandler
-});
+
 window.initPan = function(target) {
     var level = $(target);
     var classL = level.attr('class').split(' ').join('.');
     var selector = '.' + classL + ' > svg';
-    //console.log(level);return;
-    console.log($(selector));
-    window.levelPan = $(selector).getPan();
-    console.log(window.levelPan);
-    $('#control_buttons').hide();
+
+    window.levelPan = svgPanZoom(selector, {
+        zoomEnabled: true
+        , controlIconsEnabled: false
+        , fit: true
+        , minZoom: 0.8
+        , maxZoom: 5
+        , contain:0
+        , center: true
+        , zoom: 0.9
+        , dblClickZoomEnabled: false
+        , customEventsHandler: eventsHandler
+    });
+    window.levelPan.enablePan();
+    $('#control_buttons').show();
 }
 window.disablePan = function(){
-    window.levelPan.destroy();
+    $('#reset').click();
+    window.levelPan.disablePan();
+    $('#control_buttons').hide();
 }
 document.getElementById('zoom-in').addEventListener('click', function (ev) {
     ev.preventDefault()

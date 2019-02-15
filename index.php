@@ -12,7 +12,7 @@
 
 <div class="container">
     <div class="main">
-        <div id="control_buttons">
+        <div id="control_buttons" style="display:none">
             <img src="images/zoom-return.svg" id="reset">
             <img src="images/zoom-plus.svg" id="zoom-in">
             <img src="images/zoom-minus.svg" id="zoom-out">

@@ -955,17 +955,23 @@ transform: translateZ(-60vmin);*/
 	}
 }
 
+svg{
+	width: 100%;
+	height: 100%;
+	overflow: visible!important;
+	position: relative;
+}
 
 
 
 #control_buttons{
 	position: absolute;
-	top:100px!important;
-	right:30px;
-	width:50px!important;
-	height:150px;
+	bottom: 10px!important;
+	right: 25px;
+	width: 75px!important;
 	display: block;
 	z-index: 8;
+}
 
 }
 #control_buttons img{
