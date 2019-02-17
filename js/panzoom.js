@@ -51,6 +51,12 @@ eventsHandler = {
 }
 
 window.levelPan;
+$('.mall').on('click','.levels--open polygon[id],.levels--open rect[id]',function(){
+   id = $(this).attr('id');
+   $(this).parent().find('polygon[id],rect[id]').removeClass('active');
+   $(this).addClass('active');
+
+});
 
 window.initPan = function(target) {
     var level = $(target);
@@ -71,6 +77,8 @@ window.initPan = function(target) {
     });
     window.levelPan.enablePan();
     $('#control_buttons').show();
+    //window.levelPan.zoomAtPoint(2, {x: 50, y: 50});
+
 }
 window.disablePan = function(){
     $('#reset').click();
@@ -89,4 +97,5 @@ document.getElementById('reset').addEventListener('click', function (ev) {
     ev.preventDefault()
     window.levelPan.resetZoom();
     window.levelPan.resetPan();
+    $('.levels--open polygon[id],.levels--open rect[id]').removeClass('active');
 });

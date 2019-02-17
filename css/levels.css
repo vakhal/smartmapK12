@@ -624,3 +624,12 @@ svg{
 	-webkit-tap-highlight-color: transparent;
 	user-select: none;
 }
+.level polygon[id],.level rect[id]{
+	fill-opacity: 0;
+}
+.levels--open .level--current polygon[id]:hover,.levels--open .level--current rect[id]:hover{
+	fill-opacity: 1;
+}
+.level polygon[id].active,.level rect[id].active{
+	fill-opacity: 1;
+}

@@ -50,6 +50,8 @@
 
 </div>
 <!-- /container -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
 <script src="/js/libs/classie.js"></script>
 <script src="/js/libs/list.min.js"></script>
 <script src="/js/libs/svg-pan-zoom.min.js"></script>
@@ -57,8 +59,7 @@
 <script src="/js/panzoom.js"></script>
 <script src="/js/3dmap/main.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+
 
 <?include('svg-defs.php')?>
 </body>
