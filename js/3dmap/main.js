@@ -1,13 +1,4 @@
-/**
- * main.js
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2016, Codrops
- * http://www.codrops.com
- */
+
 ;(function(window) {
 
 	'use strict';
@@ -67,36 +58,17 @@
 		// levels navigation up/down ctrls
 		levelUpCtrl = mallNav.querySelector('.mallnav__button--up'),
 		levelDownCtrl = mallNav.querySelector('.mallnav__button--down'),
-		// content element
-		contentEl = document.querySelector('.content'),
-		// content close ctrl
-		contentCloseCtrl = contentEl.querySelector('button.content__button'),
-		// check if a content item is opened
-		isOpenContentArea,
-		// check if currently animating/navigating
+
 		isNavigating,
 		// check if all levels are shown or if one level is shown (expanded)
 		isExpanded,
-		// spaces list element
-		spacesListEl = document.getElementById('spaces-list'),
-		// spaces list ul
-		spacesEl = spacesListEl.querySelector('ul.list'),
-		// all the spaces listed
-		spaces = [].slice.call(spacesEl.querySelectorAll('.list__item > a.list__link')),
-		// reference to the current shows space (name set in the data-name attr of both the listed spaces and the pins on the map)
-		spaceref,
-		// sort by ctrls
-		sortByNameCtrl = document.querySelector('#sort-by-name'),
-		// listjs initiliazation (all mall´s spaces)
-		spacesList = new List('spaces-list', { valueNames: ['list__link', { data: ['level'] }, { data: ['category'] } ]} ),
+
 
 		// smaller screens:
 		// open search ctrl
 		openSearchCtrl = document.querySelector('button.open-search'),
 		// main container
-		containerEl = document.querySelector('.container'),
-		// close search ctrl
-		closeSearchCtrl = spacesListEl.querySelector('button.close-search');
+		containerEl = document.querySelector('.container');
 
 	function init() {
 		// init/bind events
@@ -128,50 +100,14 @@
 		levelUpCtrl.addEventListener('click', function() { navigate('Down'); });
 		levelDownCtrl.addEventListener('click', function() { navigate('Up'); });
 
-		// sort by name ctrl - add/remove category name (css pseudo element) from list and sorts the spaces by name 
-		sortByNameCtrl.addEventListener('click', function() {
-			if( this.checked ) {
-				classie.remove(spacesEl, 'grouped-by-category');
-				spacesList.sort('list__link');
-			}
-			else {
-				classie.add(spacesEl, 'grouped-by-category'); 
-				spacesList.sort('category');
-			}
-		});
 
-
-		// closing the content area
-		contentCloseCtrl.addEventListener('click', function() {
-			closeContentArea();
-		});
-
-		// clicking on a listed space: open level - shows space
-		spaces.forEach(function(space) {
-			var spaceItem = space.parentNode,
-				level = spaceItem.getAttribute('data-level'),
-				spacerefval = spaceItem.getAttribute('data-space');
-
-			space.addEventListener('click', function(ev) {
-				ev.preventDefault();
-				// for smaller screens: close search bar
-				closeSearch();
-				// open level
-				showLevel(level);
-				// open content for this space
-				openContent(spacerefval);
-			});
-		});
 
 		// smaller screens: open the search bar
 		openSearchCtrl.addEventListener('click', function() {
 			openSearch();
 		});
 
-		// smaller screens: close the search bar
-		closeSearchCtrl.addEventListener('click', function() {
-			closeSearch();
-		});
+
 	}
 
 	/**
@@ -207,8 +143,7 @@
 		// show mall nav ctrls
 		showMallNav();
 
-		// filter the spaces for this level
-		showLevelSpaces();
+
 	}
 
 	/**
@@ -230,23 +165,8 @@
 		// hide mall nav ctrls
 		hideMallNav();
 
-		// show back the complete list of spaces
-		spacesList.filter();
-
-		// close content area if it is open
-		if( isOpenContentArea ) {
-			closeContentArea();
-		}
 	}
 
-	/**
-	 * Shows all spaces for current level
-	 */
-	function showLevelSpaces() {
-		spacesList.filter(function(item) { 
-			return item.values().level === selectedLevel.toString(); 
-		});
-	}
 
 
 
@@ -287,7 +207,7 @@
 	 */
 	function navigate(direction) {
 		window.disablePan();
-		if( isNavigating || !isExpanded || isOpenContentArea ) {
+		if( isNavigating || !isExpanded) {
 			return false;
 		}
 		isNavigating = true;
@@ -330,9 +250,6 @@
 			isNavigating = false;
 		});
 
-		// filter the spaces for this level
-		showLevelSpaces();
-
 	}
 
 	/**
@@ -354,110 +271,6 @@
 		}
 	}
 
-	/**
-	 * Opens/Reveals a content item.
-	 */
-	function openContent(spacerefval) {
-		// if one already shown:
-		if( isOpenContentArea ) {
-			hideSpace();
-			spaceref = spacerefval;
-			showSpace();
-		}
-		else {
-			spaceref = spacerefval;
-			openContentArea();
-		}
-		
-		// remove class active (if any) from current list item
-		var activeItem = spacesEl.querySelector('li.list__item--active');
-		if( activeItem ) {
-			classie.remove(activeItem, 'list__item--active');
-		}
-		// list item gets class active
-		classie.add(spacesEl.querySelector('li[data-space="' + spacerefval + '"]'), 'list__item--active');
-
-		// remove class selected (if any) from current space
-		var activeSpaceArea = mallLevels[selectedLevel - 1].querySelector('svg > .map__space--selected');
-		if( activeSpaceArea ) {
-			classie.remove(activeSpaceArea, 'map__space--selected');
-		}
-		// svg area gets selected
-		classie.add(mallLevels[selectedLevel - 1].querySelector('svg > .map__space[data-space="' + spaceref + '"]'), 'map__space--selected');
-	}
-
-	/**
-	 * Opens the content area.
-	 */
-	function openContentArea() {
-		isOpenContentArea = true;
-		// shows space
-		showSpace(true);
-		// show close ctrl
-		classie.remove(contentCloseCtrl, 'content__button--hidden');
-		// resize mall area
-		classie.add(mall, 'mall--content-open');
-		// disable mall nav ctrls
-		classie.add(levelDownCtrl, 'boxbutton--disabled');
-		classie.add(levelUpCtrl, 'boxbutton--disabled');
-	}
-
-	/**
-	 * Shows a space.
-	 */
-	function showSpace(sliding) {
-		// the content item
-		var contentItem = contentEl.querySelector('.content__item[data-space="' + spaceref + '"]');
-		// show content
-		classie.add(contentItem, 'content__item--current');
-		if( sliding ) {
-			onEndTransition(contentItem, function() {
-				classie.add(contentEl, 'content--open');
-			});
-		}
-		// map pin gets selected
-		classie.add(mallLevelsEl.querySelector('.pin[data-space="' + spaceref + '"]'), 'pin--active');
-	}
-
-	/**
-	 * Closes the content area.
-	 */
-	function closeContentArea() {
-		classie.remove(contentEl, 'content--open');
-		// close current space
-		hideSpace();
-		// hide close ctrl
-		classie.add(contentCloseCtrl, 'content__button--hidden');
-		// resize mall area
-		classie.remove(mall, 'mall--content-open');
-		// enable mall nav ctrls
-		if( isExpanded ) {
-			setNavigationState();
-		}
-		isOpenContentArea = false;
-	}
-
-	/**
-	 * Hides a space.
-	 */
-	function hideSpace() {
-		// the content item
-		var contentItem = contentEl.querySelector('.content__item[data-space="' + spaceref + '"]');
-		// hide content
-		classie.remove(contentItem, 'content__item--current');
-		// map pin gets unselected
-		classie.remove(mallLevelsEl.querySelector('.pin[data-space="' + spaceref + '"]'), 'pin--active');
-		// remove class active (if any) from current list item
-		var activeItem = spacesEl.querySelector('li.list__item--active');
-		if( activeItem ) {
-			classie.remove(activeItem, 'list__item--active');
-		}
-		// remove class selected (if any) from current space
-		var activeSpaceArea = mallLevels[selectedLevel - 1].querySelector('svg > .map__space--selected');
-		if( activeSpaceArea ) {
-			classie.remove(activeSpaceArea, 'map__space--selected');
-		}
-	}
 
 	/**
 	 * for smaller screens: open search bar
