@@ -625,11 +625,11 @@ svg{
 	user-select: none;
 }
 .level polygon[id],.level rect[id]{
-	fill-opacity: 0;
+	/*fill-opacity: 0;*/
 }
 .levels--open .level--current polygon[id]:hover,.levels--open .level--current rect[id]:hover{
-	fill-opacity: 1;
+	fill-opacity: 0.3;
 }
 .level polygon[id].active,.level rect[id].active{
-	fill-opacity: 1;
+	fill-opacity: 0.3;
 }
