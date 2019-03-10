@@ -1,0 +1,93 @@
+.popup{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%) translateX(-50%);
+    left:50%;
+    z-index: 102;
+    width: 90vw;
+    height:90vh;
+    opacity: 0;
+    pointer-events: none;
+    background: #f0f0f0;
+    transition: opacity .5s;
+}
+.popup[data-type="room"]{
+    width: 100vw;
+    height:100vh;
+    z-index: 100;
+}
+
+.popup__bg{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #000 no-repeat center center;
+    background-size: auto 100%;
+    filter: blur(2px);
+    z-index: 98;
+}
+
+.popup__close{
+    width: 25px;
+    position: absolute;
+    height: 25px;
+    right: 25px;
+    top:25px;
+    cursor: pointer;
+}
+.popup__close svg{
+    width: 100%;
+    height:auto;
+}
+.popup__close svg *{
+    fill:#ccc;
+}
+.popup__close:hover svg *{
+    fill:#999;
+}
+.popup__content{
+
+}
+.overlay{
+    background: #000;
+    position: absolute;
+    top:0px;
+    bottom: 0px;
+    left:0px;
+    right:0px;
+    z-index: 101;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s;
+}
+.popup.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.overlay.active{
+    opacity: 0.7;
+    pointer-events: auto;
+}
+
+
+
+.camera .popup__bg{
+    background-image:url(/images/backs/camera.jpg);
+}
+
+.rack .popup__bg{
+    background-image:url(/images/backs/rack.jpg);
+}
+
+.camera h4,.rack h4{
+    text-align: center;
+    color:#fff;
+    font-size: 24px;
+}
+.camera .camera__content, .rack  .rack__content{
+    z-index: 99;
+    position: relative;
+}

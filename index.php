@@ -5,12 +5,13 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/menu.css" />
     <link rel="stylesheet" type="text/css" href="css/levels.css" />
+    <link rel="stylesheet" type="text/css" href="css/popup.css" />
     <script src="js/libs/modernizr-custom.js"></script>
     <link rel="shortcut icon" href="favicon.ico">
     <meta charset="utf-8">
 </head>
 <body>
-
+<?include('popup.php')?>
 
 <div class="container">
     <div class="main">
@@ -23,7 +24,7 @@
 
             <div class="levels">
                 <?
-                $levels=3;
+                $levels=4;
                 for ($level=1;$level<=$levels;$level++):?>
                 <div class="level level--<?=$level?>" aria-label="Level <?=$level?>">
                     <?=file_get_contents(__DIR__ . '/plans/'.$level.'.svg')?>
@@ -50,13 +51,13 @@
 
 </div>
 <!-- /container -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="js/libs/classie.js"></script>
 <script src="js/libs/list.min.js"></script>
 <script src="js/libs/svg-pan-zoom.min.js"></script>
 <script src="js/libs/hammer.min.js"></script>
 <script src="js/panzoom.js"></script>
+<script src="js/popup.js"></script>
 <script src="js/3dmap/main.js"></script>
 
 

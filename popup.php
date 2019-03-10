@@ -1,0 +1,33 @@
+<?php
+?>
+<div class="popup" data-type="room">
+    <div class="popup__close">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+<g>
+    <path d="M10,119.9L119.9,10L990,880.1L880.1,990L10,119.9L10,119.9z"/>
+    <path d="M880.1,10L990,119.9L119.9,990L10,880.1L880.1,10L880.1,10z"/>
+</g>
+</svg>
+    </div>
+    <div class="popup__content">
+
+    </div>
+</div>
+
+<div class="popup" data-type="object">
+    <div class="popup__close">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+<g>
+    <path d="M10,119.9L119.9,10L990,880.1L880.1,990L10,119.9L10,119.9z"/>
+    <path d="M880.1,10L990,119.9L119.9,990L10,880.1L880.1,10L880.1,10z"/>
+</g>
+</svg>
+    </div>
+    <div class="popup__content">
+
+    </div>
+</div>
+
+<div class="overlay"></div>

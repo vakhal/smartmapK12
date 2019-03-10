@@ -99,3 +99,7 @@ document.getElementById('reset').addEventListener('click', function (ev) {
     window.levelPan.resetPan();
     $('.levels--open polygon[id],.levels--open rect[id]').removeClass('active');
 });
+
+function getCurrentLevel(){
+    return $('.level--current').attr('aria-label').split(' ')[1];
+}

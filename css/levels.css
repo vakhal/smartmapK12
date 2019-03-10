@@ -624,12 +624,24 @@ svg{
 	-webkit-tap-highlight-color: transparent;
 	user-select: none;
 }
-.level polygon[id],.level rect[id]{
-	/*fill-opacity: 0;*/
+.levels--open .level--current{
+	cursor: auto;
 }
-.levels--open .level--current polygon[id]:hover,.levels--open .level--current rect[id]:hover{
-	fill-opacity: 0.3;
+
+.levels--open .level--current svg *{
+	pointer-events: none;
 }
-.level polygon[id].active,.level rect[id].active{
-	fill-opacity: 0.3;
+
+.levels--open .level--current #Rooms  *,
+.levels--open .level--current #Cameras *,
+.levels--open .level--current #Racks *{
+	fill-opacity: 1;
+	pointer-events: auto;
+}
+.levels--open .level--current #Rooms > *:hover *,.levels--open .level--current #Rooms > *:hover,
+.levels--open .level--current #Cameras > *:hover *,.levels--open .level--current #Cameras > *:hover,
+.levels--open .level--current #Racks > *:hover *,levels--open .level--current #Racks > *:hover {
+	fill-opacity: 1;
+	fill:#fa0!important;
+	cursor: pointer;
 }
