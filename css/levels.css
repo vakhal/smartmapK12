@@ -610,7 +610,7 @@ svg{
 	right: 25px;
 	width: 75px!important;
 	display: block;
-	z-index: 8;
+	z-index: 250;
 }
 
 
@@ -640,7 +640,7 @@ svg{
 }
 .levels--open .level--current #Rooms > *:hover *,.levels--open .level--current #Rooms > *:hover,
 .levels--open .level--current #Cameras > *:hover *,.levels--open .level--current #Cameras > *:hover,
-.levels--open .level--current #Racks > *:hover *,levels--open .level--current #Racks > *:hover {
+.levels--open .level--current #Racks > *:hover *,.levels--open .level--current #Racks > *:hover {
 	fill-opacity: 1;
 	fill:#fa0!important;
 	cursor: pointer;

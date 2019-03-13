@@ -1,0 +1,26 @@
+.room__content{
+    padding: 10%;
+}
+.room__svg,.room__svg svg{
+    width: 80vw;
+    height: 60vh;
+}
+
+
+.room svg *{
+    pointer-events: none;
+}
+
+.room #Rooms  *,
+.room #Cameras *,
+.room #Racks *{
+    fill-opacity: 1;
+    pointer-events: auto;
+}
+.room #Rooms > *:hover *,#Rooms > *:hover,
+.room #Cameras > *:hover *,#Cameras > *:hover,
+.room #Racks > *:hover *,#Racks > *:hover {
+    fill-opacity: 1;
+    fill:#fa0!important;
+    cursor: pointer;
+}

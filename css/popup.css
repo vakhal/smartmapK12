@@ -3,7 +3,7 @@
     top:50%;
     transform: translateY(-50%) translateX(-50%);
     left:50%;
-    z-index: 102;
+    z-index: 302;
     width: 90vw;
     height:90vh;
     opacity: 0;
@@ -14,7 +14,7 @@
 .popup[data-type="room"]{
     width: 100vw;
     height:100vh;
-    z-index: 100;
+    z-index: 200;
 }
 
 .popup__bg{
@@ -26,7 +26,7 @@
     background: #000 no-repeat center center;
     background-size: auto 100%;
     filter: blur(2px);
-    z-index: 98;
+    z-index: 298;
 }
 
 .popup__close{
@@ -36,6 +36,7 @@
     right: 25px;
     top:25px;
     cursor: pointer;
+    z-index: 304;
 }
 .popup__close svg{
     width: 100%;
@@ -57,7 +58,7 @@
     bottom: 0px;
     left:0px;
     right:0px;
-    z-index: 101;
+    z-index: 301;
     cursor: pointer;
     opacity: 0;
     pointer-events: none;
@@ -88,6 +89,7 @@
     font-size: 24px;
 }
 .camera .camera__content, .rack  .rack__content{
-    z-index: 99;
+    z-index: 299;
     position: relative;
 }
+

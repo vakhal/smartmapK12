@@ -63,7 +63,16 @@ window.initPan = function(target) {
     var classL = level.attr('class').split(' ').join('.');
     var selector = '.' + classL + ' > svg';
 
-    window.levelPan = svgPanZoom(selector, {
+    window.levelPan = initializePan(selector);
+
+    //window.levelPan.zoomAtPoint(2, {x: 50, y: 50});
+    window.levelPan.enablePan();
+    $('#control_buttons').show();
+}
+
+window.roomPan;
+function initializePan(selector){
+    return svgPanZoom(selector, {
         zoomEnabled: true
         , controlIconsEnabled: false
         , fit: true
@@ -75,29 +84,42 @@ window.initPan = function(target) {
         , dblClickZoomEnabled: false
         , customEventsHandler: eventsHandler
     });
-    window.levelPan.enablePan();
-    $('#control_buttons').show();
-    //window.levelPan.zoomAtPoint(2, {x: 50, y: 50});
-
 }
+
 window.disablePan = function(){
     $('#reset').click();
-    window.levelPan.disablePan();
-    $('#control_buttons').hide();
+    if(window.roomPan==undefined) {
+        window.levelPan.disablePan();
+        $('#control_buttons').hide();
+    }else {
+        window.roomPan.disablePan();
+        window.roomPan = undefined;
+    }
 }
+
 document.getElementById('zoom-in').addEventListener('click', function (ev) {
     ev.preventDefault()
-    window.levelPan.zoomIn();
+    if(window.roomPan==undefined)
+        window.levelPan.zoomIn();
+    else
+        window.roomPan.zoomIn();
 });
 document.getElementById('zoom-out').addEventListener('click', function (ev) {
     ev.preventDefault()
-    window.levelPan.zoomOut();
+    if(window.roomPan==undefined)
+        window.levelPan.zoomOut();
+    else
+        window.roomPan.zoomOut();
 });
 document.getElementById('reset').addEventListener('click', function (ev) {
     ev.preventDefault()
-    window.levelPan.resetZoom();
-    window.levelPan.resetPan();
-    $('.levels--open polygon[id],.levels--open rect[id]').removeClass('active');
+    if(window.roomPan==undefined) {
+        window.levelPan.resetZoom();
+        window.levelPan.resetPan();
+    }else{
+        window.roomPan.resetZoom();
+        window.roomPan.resetPan();
+    }
 });
 
 function getCurrentLevel(){

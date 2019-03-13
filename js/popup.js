@@ -12,12 +12,18 @@ function togglePopup(content='',type='object'){
 }
 $('.popup__close').click(function(){
     togglePopup('',$(this).parent().data('type'));
+    if($(this).parent().data('type')=='room' && window.roomPan!=undefined)
+        window.disablePan();
+    else
+        $('#control_buttons #reset').click();
+
+
 });
 $('.overlay').click(function(){
     togglePopup('','object');
 });
 
-$('#Cameras > *').click(function(){
+$('body').on('click','.levels--open .level--current #Cameras > *',function(){
     id = $(this).attr('id').split('-')[1];
     $.ajax({
         url: 'views/camera.php',
@@ -30,7 +36,7 @@ $('#Cameras > *').click(function(){
 
 });
 
-$('#Racks > *').click(function(){
+$('body').on('click','.levels--open .level--current #Racks > *,.room #Racks > *',function(){
     id = $(this).find('[id]').attr('id').split('-')[1];
     $.ajax({
         url: 'views/rack.php',
@@ -38,6 +44,19 @@ $('#Racks > *').click(function(){
         data: {floor: getCurrentLevel(), id: id},
         success: function( data ) {
             togglePopup(data, 'object');
+        }
+    });
+
+});
+
+$('body').on('click','.levels--open .level--current #Rooms > *',function(){
+    id = $(this).attr('id').split('-')[1];
+    $.ajax({
+        url: 'views/rooms/room.php',
+        type: 'POST',
+        data: {floor: getCurrentLevel(), id: id},
+        success: function( data ) {
+            togglePopup(data, 'room');
         }
     });
 

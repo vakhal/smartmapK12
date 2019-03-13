@@ -6,25 +6,26 @@
     <link rel="stylesheet" type="text/css" href="css/menu.css" />
     <link rel="stylesheet" type="text/css" href="css/levels.css" />
     <link rel="stylesheet" type="text/css" href="css/popup.css" />
+    <link rel="stylesheet" type="text/css" href="css/room.css" />
     <script src="js/libs/modernizr-custom.js"></script>
     <link rel="shortcut icon" href="favicon.ico">
     <meta charset="utf-8">
 </head>
 <body>
 <?include('popup.php')?>
-
+<div id="control_buttons" style="display:none">
+    <img src="images/zoom-return.svg" id="reset">
+    <img src="images/zoom-plus.svg" id="zoom-in">
+    <img src="images/zoom-minus.svg" id="zoom-out">
+</div>
 <div class="container">
     <div class="main">
-        <div id="control_buttons" style="display:none">
-            <img src="images/zoom-return.svg" id="reset">
-            <img src="images/zoom-plus.svg" id="zoom-in">
-            <img src="images/zoom-minus.svg" id="zoom-out">
-        </div>
+
         <div class="mall">
 
             <div class="levels">
                 <?
-                $levels=4;
+                $levels=3;
                 for ($level=1;$level<=$levels;$level++):?>
                 <div class="level level--<?=$level?>" aria-label="Level <?=$level?>">
                     <?=file_get_contents(__DIR__ . '/plans/'.$level.'.svg')?>
