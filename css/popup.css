@@ -74,7 +74,6 @@
 }
 
 
-
 .camera .popup__bg{
     background-image:url(/images/backs/camera.jpg);
 }
@@ -83,10 +82,19 @@
     background-image:url(/images/backs/rack.jpg);
 }
 
-.camera h4,.rack h4{
+.rack h4{
     text-align: center;
     color:#fff;
     font-size: 24px;
+}
+.camera h4{
+    text-align: center;
+    color:#000;
+    font-size: 24px;
+}
+.camera iframe{
+    margin: auto;
+    display: block;
 }
 .camera .camera__content, .rack  .rack__content{
     z-index: 299;
