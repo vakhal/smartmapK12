@@ -37,9 +37,22 @@ $('body').on('click','.levels--open .level--current #Cameras > *',function(){
 });
 
 $('body').on('click','.levels--open .level--current #Racks > *,.room #Racks > *',function(){
-    id = $(this).find('[id]').attr('id').split('-')[1];
+    id = $(this).attr('id').split('-')[1];
     $.ajax({
         url: 'views/rack.php',
+        type: 'POST',
+        data: {floor: getCurrentLevel(), id: id},
+        success: function( data ) {
+            togglePopup(data, 'object');
+        }
+    });
+
+});
+
+$('body').on('click','.levels--open .level--current #ACS > *,.room #ACS > *',function(){
+    id = $(this).attr('id').split('-')[1];
+    $.ajax({
+        url: 'views/acs.php',
         type: 'POST',
         data: {floor: getCurrentLevel(), id: id},
         success: function( data ) {

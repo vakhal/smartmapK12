@@ -1,0 +1,76 @@
+function getCookie(s) {
+var target = s + "=";
+var targetLength = target.length;
+var index = 0;
+
+while (1) {
+var offset = index + targetLength;
+if (document.cookie.substring(index, offset) == target) {
+var tail = document.cookie.indexOf(";", offset);
+if (tail == -1) {
+tail = document.cookie.length;
+}
+return unescape(document.cookie.substring(offset, tail));
+}
+index = 1 + document.cookie.indexOf(" ", index);
+if (index == 0 || index >= document.cookie.length) {
+return null;
+}
+}
+return null;
+}
+
+function createCookie(name, value) {
+document.cookie = name + "=" + escape(value);
+}
+
+function SelectPage() {
+
+
+var flag = getCookie("SelectFlag");
+
+if (flag == null) createCookie("SelectFlag", 0);
+flag = getCookie("SelectFlag");
+if (eval(flag)) {
+location.replace ("PSummary.html");
+} 
+else {
+
+location.replace ("PSummary.html");
+
+
+}
+createCookie("SelectFlag", 0);
+}
+
+function StatusPage() {
+//    document.net.stopProc(); // mark it for return next.htm page error, 2003/02/20 Gary
+parent.location.replace ("next.htm");
+//    createCookie("SelectFlag", 1);
+}
+
+function ColorPage() {
+parent.location.replace ("PUpsStatus.html");
+}
+
+function CheckTitle(getTitle) {
+var defTitle = "ConnectUPS Web/SNMP Card";
+var cmpTitle = "UPS Web Card";
+
+if (getTitle == cmpTitle)
+parent.document.title = defTitle;
+else
+parent.document.title = getTitle;
+}
+
+var CheckUrl="http://www.powerware.com/software/licenselan.asp?prodid=15";
+
+function CheckLink () {
+if (document.getElementById("CheckLinkUrl1").href == CheckUrl)
+document.getElementById("CheckLinkUrl1").title=HoverStr;
+}
+
+function goBack () 
+{
+javascript:history.go(-1)
+}

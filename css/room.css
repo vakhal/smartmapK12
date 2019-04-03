@@ -11,16 +11,16 @@
     pointer-events: none;
 }
 
-.room #Rooms  *,
+.room #Rooms [id^=bg],
 .room #Cameras *,
-.room #Racks *{
-    fill-opacity: 1;
+.room #Racks [id^=bg],
+.room #ACS [id^=bg]{
     pointer-events: auto;
-}
-.room #Rooms > *:hover *,#Rooms > *:hover,
-.room #Cameras > *:hover *,#Cameras > *:hover,
-.room #Racks > *:hover *,#Racks > *:hover {
-    fill-opacity: 1;
-    fill:#fa0!important;
     cursor: pointer;
+}
+.room #Rooms > *:hover  [id^=bg],
+.room #Cameras > *:hover *,#Cameras > *:hover,
+.room #Racks > *:hover [id^=bg],
+.room #ACS > *:hover [id^=bg]{
+    fill:#fa0!important;
 }

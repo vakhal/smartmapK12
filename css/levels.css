@@ -259,21 +259,23 @@ button:focus {
 }
 
 .level--1::after {
-	content: '';
+	content: 'Этаж 1';
 }
 
 .level--2::after {
-	content: '';
+	content: 'Этаж 2';
 }
 
 .level--3::after {
-	content: '';
+	content: 'Этаж 3';
 }
 
 .level--4::after {
-	content: '';
+	content: 'Этаж 4';
 }
-
+.levels--open .level::after, .no-transform .level::after{
+	display: none;
+}
 .level:not(:first-child) {
 	position: absolute;
 	top: 0;
@@ -281,13 +283,13 @@ button:focus {
 }
 
 .level--2 {
-	-webkit-transform: translateZ(10vmin);
-	transform: translateZ(10vmin);
+	-webkit-transform: translateZ(20vmin);
+	transform: translateZ(20vmin);
 }
 
 .level--3 {
-	-webkit-transform: translateZ(20vmin);
-	transform: translateZ(20vmin);
+	-webkit-transform: translateZ(40vmin);
+	transform: translateZ(40vmin);
 }
 
 .level--4 {
@@ -632,16 +634,16 @@ svg{
 	pointer-events: none;
 }
 
-.levels--open .level--current #Rooms  *,
+.levels--open .level--current #Rooms [id^=bg],
 .levels--open .level--current #Cameras *,
-.levels--open .level--current #Racks *{
-	fill-opacity: 1;
+.levels--open .level--current #Racks [id^=bg],
+.levels--open .level--current #ACS [id^=bg]{
 	pointer-events: auto;
-}
-.levels--open .level--current #Rooms > *:hover *,.levels--open .level--current #Rooms > *:hover,
-.levels--open .level--current #Cameras > *:hover *,.levels--open .level--current #Cameras > *:hover,
-.levels--open .level--current #Racks > *:hover *,.levels--open .level--current #Racks > *:hover {
-	fill-opacity: 1;
-	fill:#fa0!important;
 	cursor: pointer;
+}
+.levels--open .level--current #Rooms > *:hover  [id^=bg],
+.levels--open .level--current #Cameras > *:hover *,.levels--open .level--current #Cameras > *:hover,
+.levels--open .level--current #Racks > *:hover [id^=bg],
+.levels--open .level--current #ACS > *:hover [id^=bg]{
+	fill:#fa0!important;
 }

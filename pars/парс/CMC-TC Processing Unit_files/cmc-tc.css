@@ -1,0 +1,109 @@
+a:link    { font-weight:bold; color:#000000; text-decoration:none }
+a:visited { font-weight:bold; color:#000000; text-decoration:none }
+a:hover   { font-weight:bold; color:#0099ff; text-decoration:none }
+
+body {	background-color:white;
+	font-family:Arial;
+	text-decoration:none;
+	vertical-align:middle;
+	white-space:nowrap; }
+
+h1    { font-weight:bold;
+	text-align:center;
+	margin-top:0cm;
+	margin-bottom:0cm }
+
+h2    { color:black;
+	font-weight:normal;
+	font-size:9pt;
+	font-style:italic;
+	text-align:center;
+	margin-top:0.4cm;
+	margin-bottom:0cm }
+
+table {	border:0;
+	table-layout:fixed;
+	border-collapse:collapse;
+	border-spacing:0px; }
+
+td { 	border:0px; }
+
+#wb14c {background-color:black;  
+	color:white;
+	font-weight:bold;
+	font-size:14pt;
+	text-align:center; }
+
+#bb14c {color:black;
+	font-weight:bold;
+	font-size:14pt;
+	text-align:center; }
+
+#wb18c {color:white;
+	font-weight:bold;
+	font-size:16pt;
+	text-align:center; }
+
+#bb12l {color:black;
+	font-weight:bold;
+	font-size:12pt;
+	text-align:left; }
+
+#bb12c {color:black;
+	font-weight:bold;
+	font-size:12pt;
+	text-align:center; }
+
+#bn12l {color:black;
+	font-weight:normal;
+	font-size:12pt;
+	text-align:left; }
+
+#bn12r {color:black;
+	font-weight:normal;
+	font-size:12pt;
+	text-align:right; }
+
+#bb14l {color:black;
+	font-weight:bold;
+	font-size:14pt;
+	text-align:left; }
+
+#bb18l {color:black;
+	font-weight:bold;
+	font-size:18pt;
+	text-align:left; }
+
+#wb12l {background-color:black;
+	color:white;
+	font-weight:bold;
+	font-size:12pt;
+	text-align:left; }
+
+#wb12c {background-color:black;
+	color:white;
+	font-weight:bold;
+	font-size:12pt;
+	text-align:center; }
+
+#wn12l {background-color:black;
+	color:white;
+	font-weight:normal;
+	font-size:12pt;
+	text-align:left; }
+
+#bb18r {color:black;
+	font-weight:bold;
+	font-size:18pt;
+	text-align:right; }
+
+#bb20c {color:black;
+	font-weight:bold;
+	font-size:20pt;
+	text-align:center; }
+
+#bb24c {color:blue;
+	font-weight:bold;
+	font-size:24pt;
+	text-align:center; }
+

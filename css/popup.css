@@ -82,11 +82,21 @@
     background-image:url(/images/backs/rack.jpg);
 }
 
+.acs .popup__bg{
+    background-image:url(/images/backs/acs.jpg);
+}
+
 .rack h4{
     text-align: center;
     color:#fff;
     font-size: 24px;
 }
+.acs h4{
+    text-align: center;
+    color:#fff;
+    font-size: 24px;
+}
+
 .camera h4{
     text-align: center;
     color:#000;
@@ -96,7 +106,7 @@
     margin: auto;
     display: block;
 }
-.camera .camera__content, .rack  .rack__content{
+.camera .camera__content, .rack  .rack__content, .acs .acs__content{
     z-index: 299;
     position: relative;
 }
