@@ -13,3 +13,21 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    setInterval(function(){
+            sensor_id = 1;
+            $.ajax({
+                type: "POST",
+                url: "/services/getSensorValue.php",
+                data:{sensor_id:sensor_id},
+                success: function (data) {
+                    $('#Rack-'+sensor_id+' text').each(function(){
+                        if($(this).text().indexOf('°C')!=false)
+                            $(this).text(data+' °C');
+                    });
+                }
+            });
+        },1000);
+</script>

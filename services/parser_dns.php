@@ -53,7 +53,7 @@
     $dbuser = "root";
     $dbpass = "";
     $dbcnt = mysqli_connect($dblocation,$dbuser,$dbpass,$dbname);
-	$Insert=true;
+	$Insert=false;
 	//pages to parse
 	$httpHost="http://192.168.0.247/";
 	$links=array(
@@ -86,7 +86,26 @@
 
 	//Server 1
 	//Stoyki
-	$html = file_get_html($httpHost.$links[0]); 
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL,$httpHost.$links[0]);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS,
+        "postvar1=value1&postvar2=value2&postvar3=value3");
+
+    // In real life you should use something like:
+    // curl_setopt($ch, CURLOPT_POSTFIELDS,
+    //          http_build_query(array('postvar1' => 'value1')));
+
+    // Receive server response ...
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    $server_output = curl_exec($ch);
+
+    curl_close ($ch);
+    echo $server_output;exit;
+
+	$html = file_get_html($httpHost.$links[0]);
 	if($html ){
 		$sensors=array(1,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45);
 		$i=0;
