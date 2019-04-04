@@ -17,17 +17,30 @@
 <script>
 
     setInterval(function(){
-            sensor_id = 1;
-            $.ajax({
-                type: "POST",
-                url: "/services/getSensorValue.php",
-                data:{sensor_id:sensor_id},
-                success: function (data) {
-                    $('#Rack-'+sensor_id+' text').each(function(){
-                        if($(this).text().indexOf('°C')!=false)
-                            $(this).text(data+' °C');
-                    });
-                }
-            });
+            
+			$('#Racks > *').each(function(){
+				var sensor_id = $(this).attr('id').split('-')[1];
+				$.ajax({
+					type: "POST",
+					url: "/services/getSensorValue.php",
+					data:{sensor_id:sensor_id},
+					success: function (data) {
+						$('#Rack-'+sensor_id+' text').each(function(){
+							if($(this).text().indexOf('°C')!=false){
+								if(parseInt(data)<=18){
+									$(this).parent().find('rect').css('fill','#0f0');
+								}
+								if(parseInt(data)<=19 && parseInt(data)>18){
+									$(this).parent().find('rect').css('fill','#ff0');
+								}
+								if(parseInt(data)>19 ){
+									$(this).parent().find('rect').css('fill','#f00');
+								}
+								$(this).text(data+' °C');
+							}
+						});
+					}
+				});
+			});
         },1000);
 </script>
