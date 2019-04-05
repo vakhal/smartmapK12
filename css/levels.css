@@ -645,5 +645,5 @@ svg{
 .levels--open .level--current #Cameras > *:hover *,.levels--open .level--current #Cameras > *:hover,
 .levels--open .level--current #Racks > *:hover [id^=bg],
 .levels--open .level--current #ACS > *:hover [id^=bg]{
-	fill:#fa0!important;
+	fill:#ff0!important;
 }

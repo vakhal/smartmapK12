@@ -22,5 +22,5 @@
 .room #Cameras > *:hover *,#Cameras > *:hover,
 .room #Racks > *:hover [id^=bg],
 .room #ACS > *:hover [id^=bg]{
-    fill:#fa0!important;
+    fill:#ff0!important;
 }
