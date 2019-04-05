@@ -3,7 +3,7 @@
 	ini_set('error_reporting', E_ALL);
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
-	require_once 'simple_html_dom.php';
+	require_once '../simple_html_dom.php';
 
 
     $dblocation = "localhost";
@@ -21,10 +21,12 @@
                 ,`date`=\"$GLOBALS[DATE]\"
             ";
         if($GLOBALS['Insert']) mysqli_query($GLOBALS['dbcnt'],$query);
-        echo "<p>".$query."</p>";
+        echo "".clear($data)."\r\n";
     }
-
-
+	function clear($str){
+		return str_replace("°C","",trim(htmlspecialchars(strip_tags ($str), ENT_QUOTES)));
+	}
+	$DATE=date("Y-m-d H:i:s");
 	$httpHost = "http://192.168.0.247/";
 	$login_link = 'cmclogin.cgi?210101000000000000';
 	$sensor_link = 'cmcget.cgi?40010117';
@@ -44,7 +46,7 @@
 		$sensors=array(1,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45);
 		$i=0;
 		foreach ($html->find('td[id=bb18r]') as $row) {
-            valueInsert($sensors[$i++],$row);
+            valueInsert($row,$sensors[$i++]);
 		}
 	}
 

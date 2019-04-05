@@ -15,38 +15,39 @@
 </div>
 
 <script>
-
-    setInterval(function(){
-            $.ajax({
-                type: "POST",
-                url: "/services/parser_1/index.php",
-                success: function (data) {
-                    console.log(data);
-                }
-            });
-			$('#Racks > *').each(function(){
-				var sensor_id = $(this).attr('id').split('-')[1];
-				$.ajax({
-					type: "POST",
-					url: "/services/getSensorValue.php",
-					data:{sensor_id:sensor_id},
-					success: function (data) {
-						$('#Rack-'+sensor_id+' text').each(function(){
-							if($(this).text().indexOf('°C')!=false){
-								if(parseInt(data)<=30){
-									$(this).parent().find('rect').css('fill','#0f0');
-								}
-								if(parseInt(data)<=50 && parseInt(data)>30){
-									$(this).parent().find('rect').css('fill','#fa0');
-								}
-								if(parseInt(data)>50 ){
-									$(this).parent().find('rect').css('fill','#f00');
-								}
-								$(this).text(data+' °C');
+	function update(){
+		$.ajax({
+			type: "POST",
+			url: "/services/parser_1/index.php",
+			success: function (data) {
+				console.log(data);
+			}
+		});
+		$('#Racks > *').each(function(){
+			var sensor_id = $(this).attr('id').split('-')[1];
+			$.ajax({
+				type: "POST",
+				url: "/services/getSensorValue.php",
+				data:{sensor_id:sensor_id},
+				success: function (data) {
+					$('#Rack-'+sensor_id+' text').each(function(){
+						if($(this).text().indexOf('°C')!=false){
+							if(parseInt(data)<=30){
+								$(this).parent().find('rect').css('fill','#0f0');
 							}
-						});
-					}
-				});
+							if(parseInt(data)<=50 && parseInt(data)>30){
+								$(this).parent().find('rect').css('fill','#fa0');
+							}
+							if(parseInt(data)>50 ){
+								$(this).parent().find('rect').css('fill','#f00');
+							}
+							$(this).text(data+' °C');
+						}
+					});
+				}
 			});
-        },5000);
+		});
+	}
+	update();
+    setInterval(update,5000);
 </script>
