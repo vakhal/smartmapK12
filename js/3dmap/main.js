@@ -117,7 +117,9 @@
 		if( isExpanded ) {
 			return false;
 		}
-		
+		rx=0;rz=0;
+        updateLevelsTransorm();
+        $('.ui-slider').hide();
 		// update selected level val
 		selectedLevel = level;
 
@@ -161,7 +163,7 @@
 
 		// shows surrounding element
 		showSurroundings();
-		
+        $('.ui-slider').show();
 		// hide mall nav ctrls
 		hideMallNav();
 
@@ -175,6 +177,7 @@
 	 */
 	function showMallNav() {
 		classie.remove(mallNav, 'mallnav--hidden');
+
 	}
 
 	/**
@@ -182,6 +185,7 @@
 	 */
 	function hideMallNav() {
 		classie.add(mallNav, 'mallnav--hidden');
+
 	}
 
 	/**
